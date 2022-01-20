@@ -322,3 +322,249 @@ autoplay：自动播放
 
 # 九、页面结构分析
 
+![image-20220120104315868](HTML5.assets/image-20220120104315868.png)
+
+# 十、iframe 内联框架
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe标签</title>
+</head>
+<body>
+<!--iframe标签
+    src：链接地址
+    width：宽度
+    height：高度
+-->
+<!--<iframe src="https://www.baidu.com" frameborder="0"></iframe>-->
+<iframe src="//player.bilibili.com/player.html?aid=55631961&bvid=BV1x4411V75C&cid=97257967&page=11" scrolling="no" border="0"
+        frameborder="no" framespacing="0" allowfullscreen="true"
+        width="1080" height="640">
+</iframe>
+</body>
+</html>
+```
+
+![image-20220120105859923](HTML5.assets/image-20220120105859923.png)
+
+# 十一、表单 post 和 get 提交
+
+## 11.1、基本使用方式
+
+<img src="HTML5.assets/image-20220120161817358.png" alt="image-20220120161817358" style="zoom:80%;" />
+
+**表单一般和用户输入联合使用**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+<!--form标签
+    action：表单提交的位置，可以是网络，也可以是一个请求处理出地址
+    methon：提交方式，主要有两种
+        get:外面可以在url中看到外面提交的信息，不安全，高效
+        post：比较安全，可以传输大文件；需要检查页面元素
+-->
+<form action="Class02_ImageLabel.html" method="get">
+    <p>
+    <hr>
+        名称：
+        <input type="text">
+    </p>
+    <p>
+        <hr/>
+        <input type="submit" value="确认提交">
+        <input type="reset" value="清空">
+    </p>
+</form>
+</body>
+</html>
+```
+
+![image-20220120163101168](HTML5.assets/image-20220120163101168.png)
+
+## 11.2、input 常见属性
+
+|   属性    |                             说明                             |
+| :-------: | :----------------------------------------------------------: |
+|   type    | 指定元素的类型。text、password、checkbox、radio、submit、reset、file、hidden、image、button，默认text |
+|   name    |                      指定表单元素的名称                      |
+|   value   |          元素的初始值。type为radio时必须指定一个值           |
+|   size    | 指定表单元素的初始宽度。但type为text或password时，表单元素的大小以字符为单位。对于其他类型，宽度以像素为单位。 |
+| maxlength |           type为text或password时，输入的最大字符数           |
+|  checked  |         type为radio或checkbox时，指定按钮是否被选中          |
+
+## 11.3、示例一：文本框和单选按钮
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+<form action="Class02_ImageLabel.html" method="get">
+    <p>用户名：
+        <input type="text" placeholder="请输入用户">
+    </p>
+    <hr/>
+
+    <p>密码：
+        <input type="password">
+    </p>
+    <hr>
+
+    <p>性别：
+        <!--radio代表单选框
+            name：代表组
+            value：单选框值
+            "男"代表提示-->
+        <!--如果要确保只能单选，要在同一分组，即 name 相同-->
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="female">女
+    </p>
+    <hr/>
+    
+    <p>
+        <input type="submit" value="确认提交">
+        <input type="reset"  value="清空内容">
+    </p>
+    <hr/>
+</form>
+</body>
+</html>
+```
+
+![image-20220120170027359](HTML5.assets/image-20220120170027359.png)
+
+##11.4、示例二：多选按钮
+
+```html
+    <p>爱好
+        <!--多选按钮-->
+        <input type="checkbox" name="hobby" value="Code">编程
+        <input type="checkbox" name="hobby" value="Basketball">篮球
+        <input type="checkbox" name="hobby" value="Dinner">美食
+        <input type="checkbox" name="hobby" value="Sleep">睡觉
+    </p>
+```
+
+## 11.5、示例三：文本域和文件域
+
+```html
+<p>
+   <!--文本域-->
+   <textarea name="文本区域" cols="50" rows="10">文本</textarea>
+</p>
+<hr/>
+    
+<p>
+   <!--文件域-->
+   <input type="file" name="files">
+</p>
+<hr/>
+```
+
+![image-20220120172557244](HTML5.assets/image-20220120172557244.png)
+
+## 11.6、示例四：邮件、网页、数字、滑块和搜索
+
+```html
+<p>邮件：
+        <input type="email">
+</p>
+<hr/>
+    
+<p>网页:
+        <input type="url">
+</p>
+<hr/>
+    
+<p>年龄:
+        <!--数字类型
+            value：代表默认值
+            max：最大值
+            min：最小值
+            step：按一次改变的值大小
+        -->
+        <input type="number" name="num" value="18" max="100" min="0" step="5">
+</p>
+<hr/>
+    
+<P>音量：
+        <!--滑块模型-->
+        <input type="range" value="10">
+</P>
+<hr/>
+
+<p>搜索：
+        <input type="search" name="Search">
+</p>
+<hr/>
+```
+
+<img src="HTML5.assets/image-20220120204150357.png" alt="image-20220120204150357" style="zoom:80%;" />
+
+## 11.7、表单的应用
+
+- 隐藏域：hidden
+- 只读：readonly
+- 禁用：disabled
+
+```html
+<p>名称1：
+        <!--只读：不可以填写内容    -->
+        <input type="text" readonly>
+</p>
+<hr/>
+
+<p>名称2：
+        <input type="text" disabled>
+</p>
+<hr/>
+
+<p>名称3：
+        <input type="text" hidden>
+</p>
+<hr/>
+```
+
+![image-20220120205236155](HTML5.assets/image-20220120205236155.png)
+
+## 11.8、表单的初级验证
+
+- placeholder：提示信息
+- required：非空判断
+- pattern：正则表达式
+
+```html
+<p>名称：
+    <!--required要求改文本框不能为空，否则不可提交-->
+	<input type="text" placeholder="请输入姓名" required>
+</p>
+<hr/>
+```
+
+![image-20220120210009411](HTML5.assets/image-20220120210009411.png)
+
+```html
+<p>自定义邮箱：
+	<!--pattern要求文本框按照正则表达式输入，否则不可提交-->
+	<input type="text" name="diy" pattern="/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/">
+</p>
+<hr/>
+```
+
+![image-20220120210428058](HTML5.assets/image-20220120210428058.png)
+
+# 十二、总结
+
+![image-20220120210738331](HTML5.assets/image-20220120210738331.png)
