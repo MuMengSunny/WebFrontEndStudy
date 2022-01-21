@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+<form action="Class02_ImageLabel.html" method="get">
+    <p>用户名：
+        <input type="text" placeholder="请输入用户">
+    </p>
+    <hr/>
+
+    <p>密码：
+        <input type="password">
+    </p>
+    <hr>
+
+    <p>性别：
+        <!--radio代表单选框
+            name：代表组
+            value：单选框值
+            "男"代表提示-->
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="female">女
+    </p>
+    <hr/>
+
+    <p>爱好：
+        <!--多选按钮-->
+        <input type="checkbox" name="hobby" value="Code">编程
+        <input type="checkbox" name="hobby" value="Basketball">篮球
+        <input type="checkbox" name="hobby" value="Dinner">美食
+        <input type="checkbox" name="hobby" value="Sleep">睡觉
+    </p>
+    <hr/>
+    
+    <p>
+        <!--文本域-->
+        <textarea name="文本区域" cols="50" rows="10">文本</textarea>
+    </p>
+    <hr/>
+    
+    <p>
+        <!--文件域-->
+        <input type="file" name="files">
+    </p>
+    <hr/>
+    
+    <p>邮件：
+        <input type="email">
+    </p>
+    <hr/>
+    
+    <p>网页:
+        <input type="url">
+    </p>
+    <hr/>
+    
+    <p>年龄:
+        <!--数字类型
+            value：代表默认值
+            max：最大值
+            min：最小值
+            step：按一次改变的值大小
+        -->
+        <input type="number" name="num" value="18" max="100" min="0" step="5">
+    </p>
+    <hr/>
+    
+    <P>音量：
+        <!--滑块模型-->
+        <input type="range" value="10">
+    </P>
+    <hr/>
+    
+    <p>搜索：
+        <input type="search" name="Search">
+    </p>
+    <hr/>
+
+
+    <p>名称1：
+        <!--只读：不可以填写内容    -->
+        <input type="text" readonly>
+    </p>
+    <hr/>
+
+    <p>名称2：
+        <input type="text" disabled>
+    </p>
+    <hr/>
+
+    <p>名称3：
+        <input type="text" hidden>
+    </p>
+    <hr/>
+
+    <p>名称：
+        <!--required要求改文本框不能为空，否则不可提交-->
+        <input type="text" placeholder="请输入姓名" required>
+    </p>
+    <hr/>
+    
+    <p>自定义邮箱：
+        <!--pattern要求文本框按照正则表达式输入，否则不可提交-->
+        <input type="text" name="diy" pattern="/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/">
+    </p>
+    <hr/>
+    
+    
+    <p>
+        <input type="submit" value="确认提交">
+        <input type="reset"  value="清空内容">
+    </p>
+    <hr/>
+</form>
+</body>
+</html>
